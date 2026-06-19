@@ -146,10 +146,49 @@
       <p>Telefon: 0720 567 098</p>
       <p>Email: projectxedelivery@gmail.com</p>
     </footer>
+<section class="apply-form-section">
+  <h2>Aplică rapid</h2>
 
+  <div class="apply-box">
+    <input type="text" id="nume" placeholder="Nume și prenume">
+    <input type="tel" id="telefon" placeholder="Număr de telefon">
+
+    <select id="platforma">
+      <option value="">Alege platforma</option>
+      <option value="Wolt">Wolt</option>
+      <option value="Bolt">Bolt</option>
+      <option value="Glovo">Glovo</option>
+    </select>
+
+    <select id="transport">
+      <option value="">Mijloc de transport</option>
+      <option value="Bicicletă">Bicicletă</option>
+      <option value="Scuter">Scuter</option>
+      <option value="Mașină">Mașină</option>
+    </select>
+
+    <button onclick="trimiteAplicarea()">Trimite aplicația pe WhatsApp</button>
+  </div>
+</section>
   </main>
 
   <a class="whatsapp-float" href="https://wa.me/40720567098?text=Salut!%20Vreau%20mai%20multe%20detalii%20despre%20Project%20X%20Delivery." target="_blank">💬</a>
+<script>
+  function trimiteAplicarea() {
+    const nume = document.getElementById("nume").value;
+    const telefon = document.getElementById("telefon").value;
+    const platforma = document.getElementById("platforma").value;
+    const transport = document.getElementById("transport").value;
 
+    if (!nume || !telefon || !platforma || !transport) {
+      alert("Te rog completează toate câmpurile.");
+      return;
+    }
+
+    const mesaj = `Salut! Vreau să aplic pentru Project X Delivery.%0A%0ANume: ${nume}%0ATelefon: ${telefon}%0APlatforma dorită: ${platforma}%0AMijloc de transport: ${transport}`;
+
+    window.open(`https://wa.me/40720567098?text=${mesaj}`, "_blank");
+  }
+</script>
 </body>
 </html>
