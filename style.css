@@ -401,3 +401,28 @@ footer h3 {
     font-size: 30px;
   }
 }
+.social-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.social-btn {
+  text-decoration: none;
+  color: #111111;
+  background: #ffffff;
+  border: 1px solid #dcdcdc;
+  padding: 16px 26px;
+  border-radius: 10px;
+  font-weight: 800;
+  transition: 0.3s;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+}
+
+.social-btn:hover {
+  background: #111111;
+  color: #ffffff;
+  border-color: #111111;
+}
