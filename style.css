@@ -469,3 +469,33 @@ footer p {
     min-height: 330px;
   }
 }
+.green,
+.red,
+.primary {
+  background: #dc2626 !important;
+  color: #ffffff !important;
+}
+
+.green:hover,
+.red:hover,
+.primary:hover {
+  background: #111111 !important;
+  color: #ffffff !important;
+}
+
+.menu-btn,
+.apply-btn {
+  background: #111111 !important;
+  color: #ffffff !important;
+}
+
+.logo span,
+.badge,
+.stats h3,
+.final-sum {
+  color: #dc2626 !important;
+}
+
+.result {
+  border-left: 4px solid #dc2626 !important;
+}
