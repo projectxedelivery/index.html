@@ -453,3 +453,98 @@ footer p {
     padding: 65px 6%;
   }
 }
+/* CARDURI CONTACT - STIL APPLE */
+
+.social-cards {
+  max-width: 1120px;
+  margin: 50px auto 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.social-card {
+  min-height: 360px;
+  padding: 42px 30px;
+  background: rgba(255, 255, 255, 0.85);
+  color: #111111;
+  text-decoration: none;
+  border-radius: 28px;
+  border: 1px solid rgba(0,0,0,0.08);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.08);
+  backdrop-filter: blur(18px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  transition: 0.35s ease;
+}
+
+.social-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 30px 80px rgba(0,0,0,0.14);
+}
+
+.social-icon {
+  width: 92px;
+  height: 92px;
+  border-radius: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 46px;
+  color: #ffffff;
+  margin-bottom: 20px;
+  box-shadow: 0 14px 35px rgba(0,0,0,0.18);
+}
+
+.whatsapp {
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+}
+
+.instagram {
+  background: linear-gradient(135deg, #f58529, #dd2a7b, #8134af);
+}
+
+.facebook {
+  background: linear-gradient(135deg, #3b82f6, #1877f2);
+}
+
+.social-card h3 {
+  font-size: 23px;
+  font-weight: 900;
+  margin-bottom: 12px;
+}
+
+.social-card p {
+  color: #555555;
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 26px;
+}
+
+.social-card span {
+  width: 100%;
+  padding: 15px;
+  border-radius: 14px;
+  background: #f5f5f7;
+  color: #111111;
+  font-weight: 900;
+  border: 1px solid rgba(0,0,0,0.08);
+  transition: 0.3s;
+}
+
+.social-card:hover span {
+  background: #111111;
+  color: #ffffff;
+}
+
+@media (max-width: 900px) {
+  .social-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .social-card {
+    min-height: 320px;
+  }
+}
