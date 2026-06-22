@@ -33,8 +33,6 @@ textarea {
   margin: 0 auto;
 }
 
-/* HEADER */
-
 .header {
   position: fixed;
   top: 0;
@@ -54,45 +52,29 @@ textarea {
   gap: 22px;
 }
 
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 12px;
+.brand {
+  display: grid;
+  gap: 3px;
   min-width: fit-content;
 }
 
-.logo-mark {
-  width: 42px;
-  height: 42px;
-  border-radius: 14px;
-  display: grid;
-  place-items: center;
-  background: linear-gradient(135deg, #ff1f1f, #790000);
+.brand-main {
   color: #ffffff;
+  font-size: 19px;
   font-weight: 900;
-  box-shadow:
-    0 0 18px rgba(255, 0, 0, 0.45),
-    0 0 36px rgba(255, 0, 0, 0.18);
-}
-
-.logo-text strong {
-  display: block;
-  font-size: 17px;
-  line-height: 1;
-  color: #ffffff;
-  letter-spacing: 0.2px;
+  letter-spacing: 0.3px;
   text-shadow:
-    0 0 12px rgba(255, 255, 255, 0.32),
-    0 0 22px rgba(229, 9, 20, 0.38);
+    0 0 10px rgba(255, 255, 255, 0.45),
+    0 0 22px rgba(229, 9, 20, 0.55),
+    0 0 34px rgba(229, 9, 20, 0.25);
 }
 
-.logo-text small {
-  display: block;
-  color: #bdbdbd;
+.brand-sub {
+  color: #c9c9c9;
   font-size: 11px;
-  margin-top: 4px;
-  letter-spacing: 1.4px;
+  font-weight: 800;
   text-transform: uppercase;
+  letter-spacing: 2px;
 }
 
 .nav {
@@ -108,7 +90,7 @@ textarea {
   border-radius: 999px;
   color: #e8e8e8;
   font-size: 13px;
-  font-weight: 700;
+  font-weight: 800;
   transition: 0.25s ease;
   white-space: nowrap;
 }
@@ -130,8 +112,6 @@ textarea {
   cursor: pointer;
 }
 
-/* HERO */
-
 .hero {
   min-height: 100vh;
   position: relative;
@@ -146,7 +126,7 @@ textarea {
   background-repeat: no-repeat;
 }
 
-.hero-shade {
+.hero-overlay {
   position: absolute;
   inset: 0;
   background:
@@ -174,7 +154,7 @@ textarea {
   border: 1px solid rgba(255, 31, 31, 0.35);
   color: #ffb3b3;
   font-size: 13px;
-  font-weight: 800;
+  font-weight: 900;
   margin-bottom: 18px;
 }
 
@@ -299,8 +279,6 @@ textarea {
   margin-right: 8px;
 }
 
-/* SECTIONS */
-
 .section {
   padding: 92px 0;
 }
@@ -344,16 +322,17 @@ textarea {
   color: #cfcfcf;
 }
 
-/* OFFER */
-
-.cards-grid {
+.cards-grid,
+.training-grid,
+.cash-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 18px;
 }
 
-.card {
-  min-height: 260px;
+.card,
+.training-card {
+  min-height: 270px;
   padding: 26px;
   color: #111111;
   background: #ffffff;
@@ -384,11 +363,10 @@ textarea {
   margin-bottom: 12px;
 }
 
-.card p {
+.card p,
+.training-card p {
   color: #5b5b5b;
 }
-
-/* PLATFORMS */
 
 .platform-grid {
   display: grid;
@@ -396,7 +374,8 @@ textarea {
   gap: 18px;
 }
 
-.platform-card {
+.platform-card,
+.cash-card {
   padding: 28px;
   border-radius: 26px;
   background: rgba(255, 255, 255, 0.06);
@@ -417,52 +396,15 @@ textarea {
   margin-bottom: 18px;
 }
 
-.platform-card p {
-  color: #d6d6d6;
-}
-
-/* TRAINING */
-
-.training-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 18px;
-}
-
-.training-card {
-  min-height: 280px;
-  padding: 26px;
-  border-radius: 26px;
-  background: #f7f7f7;
-  border: 1px solid #eeeeee;
-  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.08);
-}
-
 .training-label {
   background: rgba(229, 9, 20, 0.1);
   color: #b00010;
   border-color: rgba(229, 9, 20, 0.25);
 }
 
-.training-card p {
-  color: #5b5b5b;
-}
-
-/* CASH */
-
-.cash-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 18px;
-}
-
-.cash-card {
-  min-height: 270px;
-  padding: 26px;
-  border-radius: 26px;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.11);
-  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.28);
+.platform-card p,
+.cash-card p {
+  color: #d6d6d6;
 }
 
 .cash-step {
@@ -477,32 +419,60 @@ textarea {
   margin-bottom: 20px;
 }
 
-.cash-card p {
+.cash-guide {
+  margin-top: 22px;
+  padding: 28px;
+  border-radius: 26px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.11);
+}
+
+.cash-guide h3 {
+  font-size: 24px;
+  margin-bottom: 16px;
+}
+
+.cash-guide ul {
+  display: grid;
+  gap: 12px;
+  list-style: none;
+}
+
+.cash-guide li {
   color: #d6d6d6;
+  padding-left: 26px;
+  position: relative;
+}
+
+.cash-guide li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #ff3333;
+  font-weight: 900;
 }
 
 .cash-note {
   margin-top: 22px;
   padding: 22px;
   border-radius: 22px;
-  background: rgba(255, 255, 255, 0.06);
+  background: rgba(229, 9, 20, 0.12);
   color: #ffffff;
   display: grid;
   gap: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(229, 9, 20, 0.35);
 }
 
 .cash-note span {
-  color: #d0d0d0;
+  color: #f0d0d0;
 }
-
-/* APPLY */
 
 .apply-section {
   background: #f5f5f5;
 }
 
-.apply-layout {
+.apply-layout,
+.contact-grid {
   display: grid;
   grid-template-columns: 0.9fr 1.1fr;
   gap: 36px;
@@ -523,12 +493,16 @@ textarea {
   color: #d0d0d0;
 }
 
-.apply-form {
+.apply-form,
+.contact-card {
   padding: 28px;
   background: #111111;
   color: #ffffff;
   border-radius: 26px;
   border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.apply-form {
   box-shadow: 0 24px 80px rgba(0, 0, 0, 0.2);
 }
 
@@ -564,28 +538,10 @@ textarea {
   box-shadow: 0 0 0 4px rgba(229, 9, 20, 0.12);
 }
 
-/* CONTACT */
-
-.contact-grid {
-  display: grid;
-  grid-template-columns: 0.9fr 1.1fr;
-  gap: 36px;
-  align-items: start;
-}
-
-.contact-card {
-  padding: 28px;
-  background: #111111;
-  color: #ffffff;
-  border-radius: 26px;
-}
-
 .contact-card p {
   color: #eeeeee;
   margin-bottom: 12px;
 }
-
-/* FOOTER */
 
 .footer {
   background: #070707;
@@ -600,16 +556,14 @@ textarea {
   font-size: 13px;
 }
 
-/* RESPONSIVE */
-
 @media (max-width: 1060px) {
   .nav a {
     padding: 8px 9px;
     font-size: 12px;
   }
 
-  .logo-text strong {
-    font-size: 15px;
+  .brand-main {
+    font-size: 16px;
   }
 }
 
@@ -690,7 +644,8 @@ textarea {
   .cash-card,
   .apply-form,
   .contact-card,
-  .platform-card {
+  .platform-card,
+  .cash-guide {
     border-radius: 22px;
     padding: 22px;
   }
@@ -707,7 +662,7 @@ textarea {
     font-size: 48px;
   }
 
-  .logo-text small {
+  .brand-sub {
     display: none;
   }
 }
