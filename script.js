@@ -31,7 +31,7 @@ applyForm.addEventListener("submit", function (event) {
   }
 
   const mesaj = `
-Salut! Vreau să aplic pentru Project X Delivery.
+Salut! Vreau să aplic pentru Project X Courier.
 
 Nume: ${nume}
 Telefon: ${telefon}
