@@ -19,12 +19,18 @@ body {
   top: 0;
   width: 100%;
   padding: 18px 8%;
-  background: rgba(0, 0, 0, 0.9);
+  background: rgba(0, 0, 0, 0.92);
   border-bottom: 1px solid #b00000;
   display: flex;
   justify-content: space-between;
   align-items: center;
   z-index: 1000;
+  transition: 0.3s;
+}
+
+.header.scrolled {
+  padding: 12px 8%;
+  background: rgba(0, 0, 0, 0.98);
 }
 
 .logo span {
@@ -67,7 +73,7 @@ body {
 .hero {
   min-height: 100vh;
   background-image:
-    linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.8)),
+    linear-gradient(rgba(0, 0, 0, 0.38), rgba(0, 0, 0, 0.88)),
     url("background.png");
   background-size: cover;
   background-position: center;
@@ -81,11 +87,12 @@ body {
 
 .hero-content {
   max-width: 900px;
+  animation: heroFade 1s ease forwards;
 }
 
 .badge {
   display: inline-block;
-  background: rgba(196, 0, 0, 0.85);
+  background: rgba(196, 0, 0, 0.88);
   padding: 10px 22px;
   border-radius: 30px;
   font-weight: 800;
@@ -99,7 +106,7 @@ body {
   text-transform: uppercase;
   color: #fff;
   margin-bottom: 25px;
-  text-shadow: 0 0 20px rgba(255, 0, 0, 0.7);
+  text-shadow: 0 0 18px rgba(255, 0, 0, 0.55);
 }
 
 .hero-text {
@@ -159,16 +166,29 @@ body {
   margin-bottom: 45px;
 }
 
-.cards {
+.cards,
+.platform-grid,
+.stats {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
   gap: 25px;
 }
 
-.card {
+.cards {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.card,
+.platform-card,
+.stat,
+.calculator,
+.contact-box,
+.apply-box {
   background: #111;
   border: 1px solid #8b0000;
-  border-radius: 20px;
+  border-radius: 22px;
+}
+
+.card {
   padding: 35px 25px;
   transition: 0.3s;
 }
@@ -184,27 +204,25 @@ body {
   line-height: 1.6;
 }
 
-.card:hover {
+.card:hover,
+.platform-card:hover {
   transform: translateY(-8px);
   border-color: #ff1a1a;
   box-shadow: 0 0 25px rgba(255, 0, 0, 0.25);
 }
 
 .stats-section {
+  padding: 70px 8%;
   background: #111;
+  text-align: center;
 }
 
 .stats {
-  display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 25px;
 }
 
 .stat {
-  background: #070707;
-  border-radius: 20px;
   padding: 35px;
-  border: 1px solid #8b0000;
 }
 
 .stat h3 {
@@ -225,9 +243,6 @@ body {
 .calculator {
   max-width: 520px;
   margin: auto;
-  background: #111;
-  border: 1px solid #8b0000;
-  border-radius: 24px;
   padding: 35px;
 }
 
@@ -240,10 +255,6 @@ body {
   background: #050505;
   color: #fff;
   font-size: 16px;
-}
-
-.calculator input::placeholder {
-  color: #888;
 }
 
 .calculator button {
@@ -279,16 +290,11 @@ body {
 }
 
 .platform-grid {
-  display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 25px;
   margin-bottom: 45px;
 }
 
 .platform-card {
-  background: #111;
-  border: 1px solid #8b0000;
-  border-radius: 20px;
   padding: 35px;
   transition: 0.3s;
 }
@@ -302,17 +308,15 @@ body {
   font-size: 24px;
 }
 
-.platform-card:hover {
-  transform: translateY(-8px);
-  border-color: #ff1a1a;
-}
+.glovo span { color: #ffc400; }
+.wolt span { color: #00a8ff; }
+.bolt span { color: #20d66b; }
 
 .apply-box {
   max-width: 650px;
   margin: auto;
   background: linear-gradient(135deg, #130000, #070707);
-  border: 1px solid #c40000;
-  border-radius: 25px;
+  border-color: #c40000;
   padding: 40px 25px;
 }
 
@@ -335,19 +339,12 @@ body {
 .contact-box {
   max-width: 600px;
   margin: auto;
-  background: #111;
-  border: 1px solid #8b0000;
-  border-radius: 22px;
   padding: 35px;
 }
 
 .contact-box p {
   margin-bottom: 15px;
   font-size: 18px;
-}
-
-.contact-box .btn {
-  margin-top: 15px;
 }
 
 footer {
@@ -358,14 +355,30 @@ footer {
 }
 
 .reveal {
-  opacity: 0;
-  transform: translateY(35px);
+  opacity: 1;
+  transform: translateY(0);
   transition: 0.8s ease;
 }
 
-.reveal.active {
+.js .reveal {
+  opacity: 0;
+  transform: translateY(35px);
+}
+
+.js .reveal.active {
   opacity: 1;
   transform: translateY(0);
+}
+
+@keyframes heroFade {
+  from {
+    opacity: 0;
+    transform: translateY(35px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @media (max-width: 900px) {
