@@ -1,20 +1,41 @@
-const menuBtn = document.getElementById("menuBtn");
-const navMenu = document.getElementById("navMenu");
+document.documentElement.classList.add("js");
 
-menuBtn.addEventListener("click", () => {
-  navMenu.classList.toggle("active");
-});
+document.addEventListener("DOMContentLoaded", () => {
+  const menuBtn = document.getElementById("menuBtn");
+  const navMenu = document.getElementById("navMenu");
+  const header = document.getElementById("header");
+  const calcBtn = document.getElementById("calcBtn");
 
-document.querySelectorAll(".nav a").forEach((link) => {
-  link.addEventListener("click", () => {
-    navMenu.classList.remove("active");
+  if (menuBtn && navMenu) {
+    menuBtn.addEventListener("click", () => {
+      navMenu.classList.toggle("active");
+    });
+
+    document.querySelectorAll(".nav a").forEach((link) => {
+      link.addEventListener("click", () => {
+        navMenu.classList.remove("active");
+      });
+    });
+  }
+
+  window.addEventListener("scroll", () => {
+    if (header) {
+      header.classList.toggle("scrolled", window.scrollY > 40);
+    }
   });
+
+  if (calcBtn) {
+    calcBtn.addEventListener("click", calculeazaVenit);
+  }
+
+  revealOnScroll();
+  startCounters();
 });
 
 function calculeazaVenit() {
   const zile = Number(document.getElementById("zile").value);
   const castig = Number(document.getElementById("castig").value);
-  const cash = Number(document.getElementById("cash").value);
+  const cash = Number(document.getElementById("cash").value || 0);
   const rezultat = document.getElementById("rezultat");
 
   if (!zile || !castig) {
@@ -34,9 +55,9 @@ function calculeazaVenit() {
   `;
 }
 
-const revealElements = document.querySelectorAll(".reveal");
-
 function revealOnScroll() {
+  const revealElements = document.querySelectorAll(".reveal");
+
   revealElements.forEach((element) => {
     const elementTop = element.getBoundingClientRect().top;
     const windowHeight = window.innerHeight;
@@ -48,7 +69,6 @@ function revealOnScroll() {
 }
 
 window.addEventListener("scroll", revealOnScroll);
-window.addEventListener("load", revealOnScroll);
 
 const counters = document.querySelectorAll(".counter");
 let countersStarted = false;
@@ -57,6 +77,8 @@ function startCounters() {
   if (countersStarted) return;
 
   const statsSection = document.querySelector(".stats-section");
+  if (!statsSection) return;
+
   const sectionTop = statsSection.getBoundingClientRect().top;
 
   if (sectionTop < window.innerHeight - 100) {
@@ -84,4 +106,3 @@ function startCounters() {
 }
 
 window.addEventListener("scroll", startCounters);
-window.addEventListener("load", startCounters);
