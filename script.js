@@ -14,27 +14,6 @@ document.querySelectorAll(".nav a").forEach((link) => {
   });
 });
 
-function calculeazaVenit() {
-  const zile = Number(document.getElementById("zile").value);
-  const comenzi = Number(document.getElementById("comenzi").value);
-  const valoare = Number(document.getElementById("valoare").value);
-  const cash = Number(document.getElementById("cash").value);
-  const rezultat = document.getElementById("rezultat");
-
-  if (!zile || !comenzi || !valoare || zile < 1 || comenzi < 1 || valoare < 1) {
-    rezultat.textContent = "Completează corect toate câmpurile pentru calcul.";
-    return;
-  }
-
-  const venitSaptamanal = zile * comenzi * valoare + cash;
-  const venitLunar = venitSaptamanal * 4;
-
-  rezultat.innerHTML = `
-    Estimare săptămânală: ${venitSaptamanal.toLocaleString("ro-RO")} lei<br>
-    Estimare lunară: ${venitLunar.toLocaleString("ro-RO")} lei
-  `;
-}
-
 applyForm.addEventListener("submit", function (event) {
   event.preventDefault();
 
@@ -43,9 +22,10 @@ applyForm.addEventListener("submit", function (event) {
   const oras = document.getElementById("oras").value.trim();
   const transport = document.getElementById("transport").value;
   const platforma = document.getElementById("platforma").value;
+  const experienta = document.getElementById("experienta").value;
   const mesajExtra = document.getElementById("mesaj").value.trim();
 
-  if (!nume || !telefon || !oras || !transport || !platforma) {
+  if (!nume || !telefon || !oras || !transport || !platforma || !experienta) {
     alert("Completează toate câmpurile obligatorii.");
     return;
   }
@@ -58,6 +38,7 @@ Telefon: ${telefon}
 Oraș: ${oras}
 Mijloc de transport: ${transport}
 Platformă dorită: ${platforma}
+Experiență livrări: ${experienta}
 Mesaj: ${mesajExtra || "Nu am adăugat mesaj suplimentar."}
   `;
 
