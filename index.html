@@ -12,8 +12,7 @@
     <div class="brand">
       <div class="brand-x">X</div>
       <div>
-        <h1>PROJECT <span>X</span></h1>
-        <p>DELIVERY</p>
+        <h1>PROJECT <span>X</span> DELIVERY</h1>
       </div>
     </div>
 
@@ -21,102 +20,94 @@
 
     <nav class="nav-menu" id="navMenu">
       <a href="#acasa">Acasă</a>
-      <a href="#angajare">Angajare</a>
-      <a href="#calculator">Calculator</a>
+      <a href="#platforme">Platforme</a>
+      <a href="#formular">Aplicare</a>
+      <a href="#beneficii">Beneficii</a>
       <a href="#contact">Contact</a>
     </nav>
 
-    <a class="header-apply" href="https://wa.me/40720567098?text=Salut!%20Vreau%20sa%20aplic%20pentru%20Project%20X%20Delivery." target="_blank">
-      Aplică acum
-    </a>
+    <a class="header-apply" href="#formular">Aplică</a>
   </header>
 
-  <aside class="side-platforms">
-    <p>LUCRĂM CU:</p>
-    <div class="platform-item wolt"><div class="emoji">🚴</div><strong>Wolt</strong></div>
-    <div class="platform-item glovo"><div class="emoji">📍</div><strong>Glovo</strong></div>
-    <div class="platform-item bolt"><div class="emoji">⚡</div><strong>Bolt Food</strong></div>
-  </aside>
-
-  <main class="main-content">
+  <main>
     <section class="hero" id="acasa">
-      <div class="hero-overlay">
-        <div class="hero-text">
-          <h2>ANGAJĂM</h2>
-          <h3>CURIERI!</h3>
-          <p>TU LIVREZI. <span>NOI TE SUSȚINEM.</span></p>
+      <div class="hero-content">
+        <h2>TU LIVREZI.</h2>
+        <h3>NOI TE SUSȚINEM.</h3>
+        <p>Alege platforma pe care vrei să livrezi și noi te ajutăm să începi rapid.</p>
 
-          <div class="hero-buttons">
-            <a class="btn red" href="https://wa.me/40720567098?text=Salut!%20Vreau%20sa%20aplic%20pentru%20Project%20X%20Delivery." target="_blank">
-              Aplică pe WhatsApp
-            </a>
-            <a class="btn dark" href="#calculator">Calculează venitul</a>
-          </div>
+        <div class="platform-cards" id="platforme">
+          <a class="platform-card glovo" href="https://to.glovoapp.com/a/kh3jq07" target="_blank">
+            <span>📍</span>
+            <h4>Glovo</h4>
+            <strong>Aplică Glovo</strong>
+            <p>Prin link de referral</p>
+          </a>
+
+          <button class="platform-card wolt" data-platform="Wolt">
+            <span>🚴</span>
+            <h4>Wolt</h4>
+            <strong>Aplică Wolt</strong>
+            <p>Te contactăm pe WhatsApp</p>
+          </button>
+
+          <button class="platform-card bolt" data-platform="Bolt Food">
+            <span>⚡</span>
+            <h4>Bolt Food</h4>
+            <strong>Aplică Bolt Food</strong>
+            <p>Te contactăm pe WhatsApp</p>
+          </button>
         </div>
       </div>
     </section>
 
-    <section class="benefits-bar">
-      <div class="benefit"><span>⏰</span><div><h4>PROGRAM FLEXIBIL</h4><p>Tu alegi când livrezi</p></div></div>
-      <div class="benefit"><span>💸</span><div><h4>CÂȘTIGI MAI MULT</h4><p>Fii răsplătit corect</p></div></div>
-      <div class="benefit"><span>🎧</span><div><h4>SUPORT DEDICAT</h4><p>Suntem alături de tine</p></div></div>
+    <section class="apply-section" id="formular">
+      <div class="apply-info">
+        <h2>Completează datele <span>și aplică!</span></h2>
+        <p>Completează formularul, iar mesajul se deschide automat pe WhatsApp cu toate datele tale.</p>
+
+        <div class="mini-benefit">✅ Proces rapid și simplu</div>
+        <div class="mini-benefit">✅ Suport dedicat</div>
+        <div class="mini-benefit">✅ Start cât mai rapid</div>
+      </div>
+
+      <form class="apply-form" id="applyForm">
+        <input type="text" id="nume" placeholder="Nume complet" required />
+        <input type="tel" id="telefon" placeholder="Număr de telefon" required />
+
+        <select id="platforma" required>
+          <option value="">Alege platforma</option>
+          <option value="Glovo">Glovo</option>
+          <option value="Wolt">Wolt</option>
+          <option value="Bolt Food">Bolt Food</option>
+        </select>
+
+        <select id="vehicul" required>
+          <option value="">Tip vehicul</option>
+          <option value="Bicicletă">Bicicletă</option>
+          <option value="Scuter">Scuter</option>
+          <option value="Mașină">Mașină</option>
+        </select>
+
+        <input type="text" id="oras" placeholder="Orașul în care vrei să livrezi" value="București" required />
+
+        <button type="submit">Trimite pe WhatsApp</button>
+
+        <small>Datele nu se salvează pe site. Se trimit doar prin WhatsApp.</small>
+      </form>
     </section>
 
-    <section class="bottom-grid">
-      <div class="panel" id="angajare">
-        <h2>DE CE SĂ LUCREZI CU NOI?</h2>
+    <section class="benefits" id="beneficii">
+      <div><span>⏰</span><h3>Program flexibil</h3><p>Tu alegi când livrezi</p></div>
+      <div><span>💸</span><h3>Câștigi mai mult</h3><p>Fii răsplătit corect</p></div>
+      <div><span>🎧</span><h3>Suport dedicat</h3><p>Suntem alături de tine</p></div>
+      <div><span>⚡</span><h3>Aplicare rapidă</h3><p>Începi simplu și rapid</p></div>
+    </section>
 
-        <div class="info-row">
-          <span>📅</span>
-          <div><h3>Program flexibil</h3><p>Lucrezi când vrei, în funcție de timpul tău.</p></div>
-        </div>
-
-        <div class="info-row">
-          <span>👥</span>
-          <div><h3>Platforme de top</h3><p>Colaborare cu Wolt, Bolt Food și Glovo.</p></div>
-        </div>
-
-        <div class="info-row">
-          <span>💬</span>
-          <div><h3>Aplicare rapidă</h3><p>Ne scrii pe WhatsApp și îți oferim toate detaliile.</p></div>
-        </div>
-      </div>
-
-      <div class="panel" id="calculator">
-        <h2>CALCULATOR VENIT ESTIMATIV</h2>
-
-        <div class="calc-box">
-          <label>Zile lucrate pe săptămână</label>
-          <input type="number" id="zile" value="5" />
-
-          <label>Câștig pe zi (lei)</label>
-          <input type="number" id="castig" value="250" />
-
-          <label>Cash din aplicație (lei)</label>
-          <input type="number" id="cash" value="100" />
-
-          <button id="calcBtn">CALCULEAZĂ</button>
-
-          <div class="result-box">
-            <p>VENIT ESTIMATIV / SĂPTĂMÂNĂ</p>
-            <h3 id="rezultat">1.150 LEI</h3>
-          </div>
-
-          <small>* Calculul este orientativ și poate varia.</small>
-        </div>
-      </div>
-
-      <div class="panel contact-panel" id="contact">
-        <h2>CONTACT</h2>
-
-        <div class="contact-row"><span>📞</span><div><h3>Telefon</h3><p>0720 567 098</p></div></div>
-        <div class="contact-row"><span>✉️</span><div><h3>Email</h3><p>projectxedelivery@gmail.com</p></div></div>
-        <div class="contact-row"><span>📍</span><div><h3>Oraș</h3><p>București</p></div></div>
-
-        <a class="btn red full" href="https://wa.me/40720567098?text=Salut!%20Vreau%20sa%20aplic%20pentru%20Project%20X%20Delivery." target="_blank">
-          Aplică acum
-        </a>
-      </div>
+    <section class="contact" id="contact">
+      <h2>Contact</h2>
+      <p>Telefon: <strong>0720 567 098</strong></p>
+      <p>Email: <strong>projectxedelivery@gmail.com</strong></p>
     </section>
   </main>
 
