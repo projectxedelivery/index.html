@@ -26,7 +26,6 @@ function calculeazaVenit() {
   }
 
   const total = (zile * castig) - cash;
-
   rezultat.innerText = total.toLocaleString("ro-RO") + " LEI";
 }
 
