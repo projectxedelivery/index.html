@@ -6,115 +6,60 @@
   <title>Project X Delivery</title>
   <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
-  <header class="top-header">
-    <div class="brand">
-      <div class="brand-x">X</div>
-      <div>
-        <h1>PROJECT <span>X</span> DELIVERY</h1>
-      </div>
-    </div>
-
-    <button class="menu-btn" id="menuBtn">☰</button>
-
-    <nav class="nav-menu" id="navMenu">
-      <a href="#acasa">Acasă</a>
-      <a href="#platforme">Platforme</a>
-      <a href="#formular">Aplicare</a>
-      <a href="#beneficii">Beneficii</a>
-      <a href="#contact">Contact</a>
+  <header class="header">
+    <a href="#acasa" class="brand"><span class="brand-mark">X</span><span>Project X Delivery</span></a>
+    <button class="menu-btn" id="menuBtn" aria-label="Deschide meniul">☰</button>
+    <nav class="nav" id="navMenu">
+      <a href="#acasa">Acasă</a><a href="#platforme">Platforme</a><a href="#formular">Aplicare</a><a href="#contact">Contact</a>
     </nav>
-
-    <a class="header-apply" href="#formular">Aplică</a>
+    <a class="header-btn" href="#formular">Aplică</a>
   </header>
-
   <main>
     <section class="hero" id="acasa">
-      <div class="hero-content">
-        <h2>TU LIVREZI.</h2>
-        <h3>NOI TE SUSȚINEM.</h3>
-        <p>Alege platforma pe care vrei să livrezi și noi te ajutăm să începi rapid.</p>
-
-        <div class="platform-cards" id="platforme">
-          <a class="platform-card glovo" href="https://to.glovoapp.com/a/kh3jq07" target="_blank">
-            <span>📍</span>
-            <h4>Glovo</h4>
-            <strong>Aplică Glovo</strong>
-            <p>Prin link de referral</p>
-          </a>
-
-          <button class="platform-card wolt" data-platform="Wolt">
-            <span>🚴</span>
-            <h4>Wolt</h4>
-            <strong>Aplică Wolt</strong>
-            <p>Te contactăm pe WhatsApp</p>
-          </button>
-
-          <button class="platform-card bolt" data-platform="Bolt Food">
-            <span>⚡</span>
-            <h4>Bolt Food</h4>
-            <strong>Aplică Bolt Food</strong>
-            <p>Te contactăm pe WhatsApp</p>
-          </button>
-        </div>
+      <div class="hero-box">
+        <p class="eyebrow">Angajăm curieri în București</p>
+        <h1>Tu livrezi.<br><span>Noi te susținem.</span></h1>
+        <p class="hero-text">Deschidem conturile foarte repede și te ajutăm să începi activitatea cât mai simplu.</p>
+        <div class="hero-actions"><a class="btn primary" href="#formular">Aplică acum</a><a class="btn secondary" href="https://wa.me/40720567098?text=Salut!%20Vreau%20detalii%20despre%20Project%20X%20Delivery." target="_blank">WhatsApp</a></div>
       </div>
     </section>
-
+    <section class="platform-strip" id="platforme">
+      <div class="platform-mini glovo"><span>📍</span><strong>Glovo</strong></div>
+      <div class="platform-mini wolt"><span>🚴</span><strong>Wolt</strong></div>
+      <div class="platform-mini bolt"><span>⚡</span><strong>Bolt Food</strong></div>
+    </section>
+    <section class="stats">
+      <div><strong>50+</strong><span>Curieri activi</span></div>
+      <div><strong>5000+</strong><span>Comenzi livrate</span></div>
+      <div><strong>24/7</strong><span>Suport rapid</span></div>
+    </section>
     <section class="apply-section" id="formular">
-      <div class="apply-info">
-        <h2>Completează datele <span>și aplică!</span></h2>
-        <p>Completează formularul, iar mesajul se deschide automat pe WhatsApp cu toate datele tale.</p>
-
-        <div class="mini-benefit">✅ Proces rapid și simplu</div>
-        <div class="mini-benefit">✅ Suport dedicat</div>
-        <div class="mini-benefit">✅ Start cât mai rapid</div>
+      <div class="apply-copy">
+        <h2>Completează datele</h2>
+        <p>Alegi platforma, lași datele tale, iar mesajul se trimite automat pe WhatsApp. Pentru Glovo poți aplica și prin linkul de referral.</p>
+        <div class="quick-points"><span>✅ Conturi deschise rapid</span><span>✅ Suport la început</span><span>✅ Program flexibil</span></div>
+        <a class="referral-link" href="https://to.glovoapp.com/a/kh3jq07" target="_blank">Aplică direct prin referral Glovo</a>
       </div>
-
       <form class="apply-form" id="applyForm">
         <input type="text" id="nume" placeholder="Nume complet" required />
-        <input type="tel" id="telefon" placeholder="Număr de telefon" required />
-
-        <select id="platforma" required>
-          <option value="">Alege platforma</option>
-          <option value="Glovo">Glovo</option>
-          <option value="Wolt">Wolt</option>
-          <option value="Bolt Food">Bolt Food</option>
-        </select>
-
-        <select id="vehicul" required>
-          <option value="">Tip vehicul</option>
-          <option value="Bicicletă">Bicicletă</option>
-          <option value="Scuter">Scuter</option>
-          <option value="Mașină">Mașină</option>
-        </select>
-
-        <input type="text" id="oras" placeholder="Orașul în care vrei să livrezi" value="București" required />
-
+        <input type="tel" id="telefon" placeholder="Telefon" required />
+        <select id="platforma" required><option value="">Alege platforma</option><option value="Glovo">Glovo</option><option value="Wolt">Wolt</option><option value="Bolt Food">Bolt Food</option></select>
+        <select id="vehicul" required><option value="">Vehicul</option><option value="Bicicletă">Bicicletă</option><option value="Scuter">Scuter</option><option value="Mașină">Mașină</option></select>
+        <input type="text" id="oras" placeholder="Oraș" value="București" required />
         <button type="submit">Trimite pe WhatsApp</button>
-
-        <small>Datele nu se salvează pe site. Se trimit doar prin WhatsApp.</small>
+        <small>Nu salvăm datele pe site. Se deschide WhatsApp cu mesajul completat.</small>
       </form>
     </section>
-
-    <section class="benefits" id="beneficii">
-      <div><span>⏰</span><h3>Program flexibil</h3><p>Tu alegi când livrezi</p></div>
-      <div><span>💸</span><h3>Câștigi mai mult</h3><p>Fii răsplătit corect</p></div>
-      <div><span>🎧</span><h3>Suport dedicat</h3><p>Suntem alături de tine</p></div>
-      <div><span>⚡</span><h3>Aplicare rapidă</h3><p>Începi simplu și rapid</p></div>
+    <section class="benefits">
+      <article><span>⏰</span><h3>Flexibil</h3><p>Lucrezi în ritmul tău.</p></article>
+      <article><span>💸</span><h3>Câștiguri</h3><p>Venit în funcție de activitate.</p></article>
+      <article><span>🎧</span><h3>Suport</h3><p>Primești ajutor la început.</p></article>
     </section>
-
-    <section class="contact" id="contact">
-      <h2>Contact</h2>
-      <p>Telefon: <strong>0720 567 098</strong></p>
-      <p>Email: <strong>projectxedelivery@gmail.com</strong></p>
-    </section>
+    <section class="contact" id="contact"><h2>Contact</h2><p>Telefon: <strong>0720 567 098</strong></p><p>Email: <strong>projectxedelivery@gmail.com</strong></p><div class="socials"><a href="https://web.facebook.com/profile.php?id=61590673456642" target="_blank">📘 Facebook</a><a href="https://www.instagram.com/projectxedelivery/" target="_blank">📸 Instagram</a><a href="https://wa.me/40720567098" target="_blank">💬 WhatsApp</a></div></section>
   </main>
-
-  <footer>
-    <p>© 2026 Project X Delivery. Toate drepturile rezervate.</p>
-  </footer>
-
+  <a class="whatsapp-float" href="https://wa.me/40720567098?text=Salut!%20Vreau%20detalii%20despre%20Project%20X%20Delivery." target="_blank">💬</a>
+  <footer><p>© 2026 Project X Delivery</p></footer>
   <script src="script.js"></script>
 </body>
 </html>
