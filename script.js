@@ -6,6 +6,12 @@ if (menuBtn && navMenu) {
   menuBtn.addEventListener("click", () => {
     navMenu.classList.toggle("active");
   });
+
+  document.querySelectorAll(".nav-menu a").forEach((link) => {
+    link.addEventListener("click", () => {
+      navMenu.classList.remove("active");
+    });
+  });
 }
 
 function calculeazaVenit() {
@@ -15,16 +21,17 @@ function calculeazaVenit() {
   const rezultat = document.getElementById("rezultat");
 
   if (!zile || !castig) {
-    rezultat.innerText = "Completează zilele și câștigul pe zi.";
+    rezultat.innerText = "Completează câmpurile";
     return;
   }
 
-  const totalFinal = zile * castig - cash;
+  const total = (zile * castig) - cash;
 
-  rezultat.innerText =
-    "Estimativ primești: " + totalFinal + " lei / săptămână";
+  rezultat.innerText = total.toLocaleString("ro-RO") + " LEI";
 }
 
 if (calcBtn) {
   calcBtn.addEventListener("click", calculeazaVenit);
 }
+
+calculeazaVenit();
