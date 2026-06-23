@@ -29,7 +29,7 @@ textarea {
 }
 
 .container {
-  width: min(1240px, 94%);
+  width: min(1320px, 96%);
   margin: 0 auto;
 }
 
@@ -45,11 +45,11 @@ textarea {
 }
 
 .nav-wrapper {
-  min-height: 78px;
+  min-height: 82px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 34px;
+  gap: 46px;
 }
 
 .brand {
@@ -81,12 +81,12 @@ textarea {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  gap: 14px;
+  gap: 18px;
   flex-wrap: nowrap;
 }
 
 .nav a {
-  padding: 10px 14px;
+  padding: 11px 17px;
   border-radius: 999px;
   color: #e8e8e8;
   font-size: 13px;
@@ -103,8 +103,8 @@ textarea {
 .social-menu {
   display: flex;
   align-items: center;
-  gap: 10px;
-  margin-left: 6px;
+  gap: 12px;
+  margin-left: 12px;
 }
 
 .nav .social-btn {
@@ -643,18 +643,27 @@ textarea {
   font-size: 13px;
 }
 
-@media (max-width: 1180px) {
+@media (max-width: 1240px) {
+  .nav-wrapper {
+    gap: 24px;
+  }
+
   .nav {
-    gap: 8px;
+    gap: 9px;
   }
 
   .nav a {
-    padding: 8px 9px;
+    padding: 8px 10px;
     font-size: 12px;
   }
 
   .brand-main {
     font-size: 16px;
+  }
+
+  .social-menu {
+    gap: 8px;
+    margin-left: 6px;
   }
 
   .nav .social-btn {
@@ -689,7 +698,7 @@ textarea {
 
   .nav {
     position: absolute;
-    top: 78px;
+    top: 82px;
     left: 4%;
     right: 4%;
     display: none;
