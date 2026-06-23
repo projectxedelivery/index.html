@@ -19,13 +19,14 @@ applyForm.addEventListener("submit", function (event) {
 
   const nume = document.getElementById("nume").value.trim();
   const telefon = document.getElementById("telefon").value.trim();
+  const email = document.getElementById("email").value.trim();
   const oras = document.getElementById("oras").value.trim();
   const transport = document.getElementById("transport").value;
   const platforma = document.getElementById("platforma").value;
   const experienta = document.getElementById("experienta").value;
   const mesajExtra = document.getElementById("mesaj").value.trim();
 
-  if (!nume || !telefon || !oras || !transport || !platforma || !experienta) {
+  if (!nume || !telefon || !email || !oras || !transport || !platforma || !experienta) {
     alert("Completează toate câmpurile obligatorii.");
     return;
   }
@@ -35,6 +36,7 @@ Salut! Vreau să aplic pentru Project X Courier.
 
 Nume: ${nume}
 Telefon: ${telefon}
+Email: ${email}
 Oraș: ${oras}
 Mijloc de transport: ${transport}
 Platformă dorită: ${platforma}
